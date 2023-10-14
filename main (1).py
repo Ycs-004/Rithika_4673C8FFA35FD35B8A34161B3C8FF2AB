@@ -1,30 +1,25 @@
-'''implement a class called player that represents a cricket player.
-the play class should have a method called play() which prints" the player is playing cricket
-device two classEdu,batsman and bowler, from the player class.
-override the play()method in each derived class to print" the batsman is batting"and"the bowler is bowling", 
-respectlovely write a program to create objects of booth the batsman create objects of both the batsman and bowler classes and call the play() method for each objects'''
+class Student:
+    def __init__(self, name, roll_number, cgpa):
+        self.name = name
+        self.roll_number = roll_number
+        self.cgpa = cgpa
 
+def sort_students(student_list):
+    sorted_students = sorted(student_list, key=lambda x: x.cgpa, reverse=True)
+    return sorted_students
 
-# defined the base class player
-class player:
-  def play(self):
-    print("the player is playing cricket.")
+# Test the function with different input lists of students
+students1 = [Student("Alice", "A123", 3.8), Student("Bob", "B456", 3.5), Student("Charlie", "C789", 3.9)]
+students2 = [Student("Eva", "E321", 3.6), Student("David", "D654", 3.2), Student("Fiona", "F987", 4.0)]
 
-#define the derived class batsman
-class Batsman(player):
-  def play(self):
-    print("the batsman is batting.")
+sorted_students1 = sort_students(students1)
+sorted_students2 = sort_students(students2)
 
-# defined the derived class bowler
-class Bowler(player):
-  def play(self):
-    print("the bowler is bowling")
+# Print sorted student lists
+print("Sorted students list 1:")
+for student in sorted_students1:
+    print(f"Name: {student.name}, Roll Number: {student.roll_number}, CGPA: {student.cgpa}")
 
-# create objects of batsman and bowler classEdu
-batsman = Batsman()
-bowler = Bowler()
-
-# call the play() method to each object
-batsman.play()
-bowler.play()
-
+print("\nSorted students list 2:")
+for student in sorted_students2:
+    print(f"Name: {student.name}, Roll Number: {student.roll_number}, CGPA: {student.cgpa}")
